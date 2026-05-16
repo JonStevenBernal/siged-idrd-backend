@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: siged-idrd-postgres
+    environment:
+      POSTGRES_DB: siged_idrd
+      POSTGRES_USER: siged
+      POSTGRES_PASSWORD: siged_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - siged_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U siged -d siged_idrd"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongodb:
+    image: mongo:7
+    container_name: siged-idrd-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: siged
+      MONGO_INITDB_ROOT_PASSWORD: siged_password
+      MONGO_INITDB_DATABASE: siged_auth
+    ports:
+      - "27018:27017"
+    volumes:
+      - siged_mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  siged_postgres_data:
+  siged_mongo_data:
