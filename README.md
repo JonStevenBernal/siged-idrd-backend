@@ -1,6 +1,6 @@
 # SIGED-IDRD Backend
 
-Backend Spring Boot + GraphQL basado en la estructura de `HolaJavaTest`.
+Backend Spring Boot + GraphQL.
 
 ## Orden funcional aplicado desde SRS
 
