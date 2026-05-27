@@ -11,8 +11,22 @@ import java.util.List;
 @Repository
 public interface JugadorRepository extends JpaRepository<Jugador, Long> {
 
+    /**
+     * Consulta los jugadores vinculados a un equipo.
+     *
+     * @param equipoId identificador del equipo propietario de los jugadores.
+     * @return lista de jugadores registrados para el equipo indicado; puede estar vacia.
+     */
     List<Jugador> findByEquipoId(Long equipoId);
 
+    /**
+     * Verifica si un documento de identidad ya esta inscrito en algun equipo del torneo.
+     * La consulta evita que un jugador participe con dos equipos en el mismo torneo.
+     *
+     * @param documento documento de identidad del jugador.
+     * @param torneoId identificador del torneo donde se valida la unicidad.
+     * @return {@code true} si el documento ya existe dentro del torneo.
+     */
     @Query("""
             select count(j) > 0
             from Jugador j
