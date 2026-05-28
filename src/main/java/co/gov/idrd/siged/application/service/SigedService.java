@@ -35,6 +35,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 
+/**
+ * Servicio de aplicacion para la gestion deportiva de SIGED.
+ * Orquesta reglas de negocio de torneos, equipos, jugadores, partidos y tablas.
+ */
 @Service
 @Transactional
 public class SigedService {

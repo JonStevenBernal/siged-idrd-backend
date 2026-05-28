@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
+/**
+ * Puerto de persistencia MongoDB para cuentas de usuario.
+ */
 @Repository
 public interface UsuarioCuentaRepository extends MongoRepository<UsuarioCuenta, String> {
 

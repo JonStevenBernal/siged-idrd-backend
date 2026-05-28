@@ -22,6 +22,10 @@ import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
+/**
+ * Adaptador GraphQL de SIGED.
+ * Publica queries y mutations delegando la logica a servicios de aplicacion.
+ */
 @Controller
 public class SigedResolver {
 

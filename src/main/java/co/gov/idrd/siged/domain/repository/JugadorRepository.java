@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Puerto de persistencia JPA para la entidad {@link Jugador}.
+ */
 @Repository
 public interface JugadorRepository extends JpaRepository<Jugador, Long> {
 

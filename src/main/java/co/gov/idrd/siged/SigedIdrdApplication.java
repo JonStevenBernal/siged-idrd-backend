@@ -3,6 +3,10 @@ package co.gov.idrd.siged;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Clase raiz de la aplicacion SIGED IDRD.
+ * Habilita el autoescaneo de componentes Spring Boot desde el paquete base.
+ */
 @SpringBootApplication
 public class SigedIdrdApplication {
 

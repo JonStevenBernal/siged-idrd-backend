@@ -8,6 +8,9 @@ import org.springframework.web.filter.CorsFilter;
 
 import java.util.List;
 
+/**
+ * Configuracion transversal de CORS para permitir consumo desde frontends locales.
+ */
 @Configuration
 public class CorsConfig {
 

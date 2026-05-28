@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.Instant;
 
+/**
+ * Manejador global de excepciones REST.
+ * Normaliza errores de negocio y validacion en una respuesta JSON consistente.
+ */
 @RestControllerAdvice
 public class RestExceptionHandler {
 
@@ -65,6 +69,15 @@ public class RestExceptionHandler {
         );
     }
 
+    /**
+     * Estructura estandar de error devuelta por la API REST.
+     *
+     * @param timestamp instante del error en formato ISO-8601.
+     * @param status codigo HTTP numerico.
+     * @param error descripcion HTTP del estado.
+     * @param message mensaje funcional o tecnico seguro.
+     * @param path ruta HTTP donde ocurrio el error.
+     */
     public record ApiError(
             String timestamp,
             int status,

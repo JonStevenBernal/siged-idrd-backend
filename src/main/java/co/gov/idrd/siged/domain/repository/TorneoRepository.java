@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Puerto de persistencia JPA para la entidad {@link Torneo}.
+ */
 @Repository
 public interface TorneoRepository extends JpaRepository<Torneo, Long> {
 

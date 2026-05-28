@@ -30,6 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+/**
+ * Adaptador REST principal de SIGED.
+ * Expone endpoints HTTP y delega reglas de negocio a los servicios de aplicacion.
+ */
 @RestController
 @RequestMapping("/api")
 public class SigedRestController {

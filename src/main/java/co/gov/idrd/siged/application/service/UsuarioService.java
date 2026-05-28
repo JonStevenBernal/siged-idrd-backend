@@ -15,6 +15,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+/**
+ * Servicio de aplicacion para cuentas de usuario y autenticacion.
+ * Persiste usuarios en MongoDB y protege claves mediante {@link PasswordEncoder}.
+ */
 @Service
 public class UsuarioService {
 

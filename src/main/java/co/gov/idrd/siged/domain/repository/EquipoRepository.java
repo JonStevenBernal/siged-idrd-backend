@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+/**
+ * Puerto de persistencia JPA para la entidad {@link Equipo}.
+ */
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {
 
